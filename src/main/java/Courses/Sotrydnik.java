@@ -18,12 +18,21 @@ class Sotrydnik {
 
 
     public Sotrydnik(String fio, String doljnost, String email, String phoneNumber, int salary, int age) {
+
         this.fio = fio;
         this.doljnost = doljnost;
         this.email = email;
         this.phoneNumber = phoneNumber;
-        this.salary = salary;
-        this.age = age;
+        if(salary>=0){
+        this.salary = salary;}
+        else{
+            System.out.println("Зарплата не может быть отрицательной");
+        }
+        if(age>0){
+        this.age = age;}
+        else{
+            System.out.println("Возраст не может быть отрицательным");
+        }
     }
 
     private void ShowInfoArray(Sotrydnik[] m) {
