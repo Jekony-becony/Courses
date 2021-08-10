@@ -2,13 +2,15 @@ package Courses;
 
 public class Triangle extends GeomtricalFigures implements GeoFigures {
     static final int side = 3;
-    int sideA;
-    int sideB;
-    int sideC;
+    double sideA;
+    double sideB;
+    double sideC;
 
-    public Triangle(String name, String fillÑolor, String borderColor, int sideA, int sideB, int sideC) {
+    public Triangle(String name, String fillÑolor, String borderColor, double sideA, double sideB, double sideC) {
         super(name, fillÑolor, borderColor);
-        if (sideA + sideB > sideC && sideB + sideC > sideA && sideA + sideC > sideB) {
+        if (sideA <= 0 || sideB <= 0 || sideC <= 0) {
+            System.out.println("Çíà÷åíèå ñòîðîí äîëæíî áûòü áîëüøå 0!");
+        } else if (sideA + sideB > sideC && sideB + sideC > sideA && sideA + sideC > sideB) {
             this.sideA = sideA;
             this.sideB = sideB;
             this.sideC = sideC;
@@ -19,15 +21,15 @@ public class Triangle extends GeomtricalFigures implements GeoFigures {
     }
 
     @Override
-    public double calculateArea() {
-        double area;
+    public double calculateSquare() {
+        double square;
         double p = (sideA + sideB + sideC) / 2.0;
-        area = Math.sqrt(p * (p - sideA) * (p - sideB) * (p - sideC));
-        return area;
+        square = Math.sqrt(p * (p - sideA) * (p - sideB) * (p - sideC));
+        return square;
     }
 
-    public int[] getArray() {
-        int[] triangleArray = new int[]{sideA, sideB, sideC};
+    public double[] getArray() {
+        double[] triangleArray = new double[]{sideA, sideB, sideC};
         return triangleArray;
     }
 }

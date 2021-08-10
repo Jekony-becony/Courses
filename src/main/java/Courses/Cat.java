@@ -38,15 +38,22 @@ public class Cat extends Animal {
     }
 
     public void run(int distance) {
-        if (distance > 200) {
+        if (distance <= 0) {
+            System.out.println("Дистанция должна быть больше 0!");
+        } else if (distance > 200) {
             System.out.println(name + " не может бегать больше чем 200 метров :(");
         } else {
-            System.out.println(name + " пробежал " + distance);
+            System.out.println(name + " пробежал " + distance + " м.");
         }
     }
 
     public void swim(int distance) {
-        System.out.println("Котики не умеют плавать :(");
+        if (distance <= 0) {
+            System.out.println("Дистанция должна быть больше 0!");
+        } else {
+            System.out.println("Котики не умеют плавать :(");
+        }
+
     }
 
     public void eat(Plate p) {

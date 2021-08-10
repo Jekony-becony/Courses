@@ -1,6 +1,6 @@
 package Courses;
 
-public class Animal {
+abstract public class Animal {
     protected String name;
     protected int age;
     protected String color;
@@ -42,5 +42,13 @@ public class Animal {
         System.out.println(name + " " + age + " " + color);
     }
 
+    public void run(int distance) {
+        System.out.println(name + " пробежал " + distance + " м");
+
+    }
+
+    public void swim(int distance) {
+        System.out.println(name + " проплыл " + distance + " м");
+    }
 
 }

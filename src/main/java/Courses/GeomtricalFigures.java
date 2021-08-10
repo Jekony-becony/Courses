@@ -2,15 +2,15 @@ package Courses;
 
 public class GeomtricalFigures {
     private String name;
-    private String fill—olor;
+    private String fillColor;
     private String borderColor;
 
     public GeomtricalFigures() {
     }
 
-    public GeomtricalFigures(String name, String fill—olor, String borderColor) {
+    public GeomtricalFigures(String name, String fillColor, String borderColor) {
         this.name = name;
-        this.fill—olor = fill—olor;
+        this.fillColor = fillColor;
         this.borderColor = borderColor;
     }
 
@@ -18,8 +18,8 @@ public class GeomtricalFigures {
         this.borderColor = borderColor;
     }
 
-    public void setFill—olor(String fill—olor) {
-        this.fill—olor = fill—olor;
+    public void setFill—olor(String fillColor) {
+        this.fillColor = fillColor;
     }
 
     public void setSide(String side) {
@@ -31,7 +31,7 @@ public class GeomtricalFigures {
     }
 
     public String getFill—olor() {
-        return fill—olor;
+        return fillColor;
     }
 
     public String getBorderColor() {
@@ -39,7 +39,7 @@ public class GeomtricalFigures {
     }
 
     public void info() {
-        System.out.println(name + " fill color: " + fill—olor + " border color: " + borderColor);
+        System.out.println(name + " fill color: " + fillColor + " border color: " + borderColor);
     }
 
 }

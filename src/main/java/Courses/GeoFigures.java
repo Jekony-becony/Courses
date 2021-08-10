@@ -2,10 +2,10 @@ package Courses;
 
 public interface GeoFigures {
 
-    double calculateArea();
+    double calculateSquare();
 
-    default int calculatingPerimeter(int sides[]) {
-        int perimeter = 0;
+    default double calculatePerimeter(double sides[]) {
+        double perimeter = 0;
         for (int i = 0; i < sides.length; i++) {
             perimeter += sides[i];
         }

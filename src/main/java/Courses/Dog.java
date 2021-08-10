@@ -9,18 +9,22 @@ public class Dog extends Animal {
     }
 
     public void run(int distance) {
-        if (distance > 500) {
+        if (distance <= 0) {
+            System.out.println("Дистанция долдна быть больше 0!");
+        } else if (distance > 500) {
             System.out.println(name + " не может бегать больше чем 500 метров :(");
         } else {
-            System.out.println(name + " пробежал " + distance);
+            System.out.println(name + " пробежал " + distance + " м.");
         }
     }
 
     public void swim(int distance) {
-        if (distance > 10) {
+        if (distance <= 0) {
+            System.out.println("Дистанция долдна быть больше 0!");
+        } else if (distance > 10) {
             System.out.println(name + " не может плыть больше чем 10 метров :(");
         } else {
-            System.out.println(name + " проплыл " + distance);
+            System.out.println(name + " проплыл " + distance + " м.");
         }
     }
 }

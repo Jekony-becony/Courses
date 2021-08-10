@@ -20,10 +20,24 @@ public class HomeWorkApp {
         }
         plate.info();
 
-        Triangle triangle = new Triangle("Треугольник", "green", "blue", 5, 10, 12);
+        Triangle triangle = new Triangle("Треугольник", "green", "blue", 5.5, 10, 12);
         triangle.info();
-        System.out.println(triangle.calculatingPerimeter(triangle.getArray()));
-        System.out.println(triangle.calculateArea());
+        System.out.println(String.format("Периметр: %.2f", triangle.calculatePerimeter(triangle.getArray())));
+        System.out.println(String.format("Площадь: %.2f", triangle.calculateSquare()));
+        Rectangle rectangle = new Rectangle("Прямоугольник", "yellow", "black", 5.3, 5.3, 8, 8);
+        rectangle.info();
+        System.out.println(String.format("Периметр: %.2f", rectangle.calculatePerimeter(rectangle.getArray())));
+        System.out.println(String.format("Площадь: %.2f", rectangle.calculateSquare()));
+        Circle circle = new Circle("Круг", "white", "pink", 10);
+        circle.info();
+        System.out.println(String.format("Периметр: %.2f", circle.calculatePerimeter()));
+        System.out.println(String.format("Площадь: %.2f", circle.calculateSquare()));
+        Payment payment = new Payment();
+        payment.setPayment();
+        payment.printCheque();
+        Park park = new Park();
+        park.setPark();
+        park.printCheque();
     }
 
 }
