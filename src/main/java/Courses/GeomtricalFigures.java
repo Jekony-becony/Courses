@@ -39,7 +39,7 @@ public class GeomtricalFigures {
     }
 
     public void info() {
-        System.out.println(name + " fill color: " + fillColor + " border color: " + borderColor);
+        System.out.println(name + " | fill color: " + fillColor + " | border color: " + borderColor);
     }
 
 }

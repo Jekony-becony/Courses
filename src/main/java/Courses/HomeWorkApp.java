@@ -20,11 +20,11 @@ public class HomeWorkApp {
         }
         plate.info();
 
-        Triangle triangle = new Triangle("Треугольник", "green", "blue", 5.5, 10, 12);
+        Triangle triangle = new Triangle("Треугольник", "green", "blue", 5.5, 8, 12);
         triangle.info();
         System.out.println(String.format("Периметр: %.2f", triangle.calculatePerimeter(triangle.getArray())));
         System.out.println(String.format("Площадь: %.2f", triangle.calculateSquare()));
-        Rectangle rectangle = new Rectangle("Прямоугольник", "yellow", "black", 5.3, 5.3, 8, 8);
+        Rectangle rectangle = new Rectangle("Прямоугольник", "yellow", "black", 5.3, 8);
         rectangle.info();
         System.out.println(String.format("Периметр: %.2f", rectangle.calculatePerimeter(rectangle.getArray())));
         System.out.println(String.format("Площадь: %.2f", rectangle.calculateSquare()));

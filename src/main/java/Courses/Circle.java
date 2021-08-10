@@ -4,8 +4,8 @@ public class Circle extends GeomtricalFigures implements GeoFigures {
     static final int side = 4;
     double radius;
 
-    public Circle(String name, String fillÑolor, String borderColor, double radius) {
-        super(name, fillÑolor, borderColor);
+    public Circle(String name, String fillColor, String borderColor, double radius) {
+        super(name, fillColor, borderColor);
         if (radius > 0) {
             this.radius = radius;
         } else {

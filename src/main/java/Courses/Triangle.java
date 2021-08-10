@@ -6,8 +6,8 @@ public class Triangle extends GeomtricalFigures implements GeoFigures {
     double sideB;
     double sideC;
 
-    public Triangle(String name, String fill—olor, String borderColor, double sideA, double sideB, double sideC) {
-        super(name, fill—olor, borderColor);
+    public Triangle(String name, String fillColor, String borderColor, double sideA, double sideB, double sideC) {
+        super(name, fillColor, borderColor);
         if (sideA <= 0 || sideB <= 0 || sideC <= 0) {
             System.out.println("«Ì‡˜ÂÌËÂ ÒÚÓÓÌ ‰ÓÎÊÌÓ ·˚Ú¸ ·ÓÎ¸¯Â 0!");
         } else if (sideA + sideB > sideC && sideB + sideC > sideA && sideA + sideC > sideB) {

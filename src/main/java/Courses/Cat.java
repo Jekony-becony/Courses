@@ -58,7 +58,7 @@ public class Cat extends Animal {
 
     public void eat(Plate p) {
         boolean sucess = p.decreaseFood(appetite);
-        if (sucess == true) {
+        if (sucess) {
             this.satiety = true;
             System.out.println(name + " покушал!");
         } else
