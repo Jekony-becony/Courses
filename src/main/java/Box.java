@@ -1,14 +1,16 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
-public class Box<T>{
+
+public class Box<T extends Fruit> {
     private boolean isFree = true;
-    float maxWeight = 100.0f;
-    float currentWeight = 0;
-    ArrayList<T> arrayList;
+    private float maxWeight = 100.0f;
+    private float currentWeight = 0;
+    private ArrayList<T> arrayList = new ArrayList<>();
 
     void addFruit(T fruit) {
-        if (currentWeight + 1 <= maxWeight) {
+        if (currentWeight + fruit.weight <= maxWeight) {
             arrayList.add(fruit);
-            currentWeight++;
+            currentWeight += fruit.weight;
             if (arrayList.size() < 1)
                 isFree = false;
         } else
@@ -19,15 +21,22 @@ public class Box<T>{
         return arrayList.size() * f.weight;
     }
 
-    boolean compare(Fruit f1, Fruit f2) {
-        if (getWeight(f1) == getWeight(f2)) {
+    public boolean compare(Box box) {
+        if (currentWeight == box.currentWeight) {
             return true;
         } else return false;
+
     }
 
-    public boolean compare(Box box) {
-        if (currentWeight == box.currentWeight)
-            return true;
-        return false;
+    public void clear() {
+        this.currentWeight = 0;
+        arrayList.clear();
+    }
+
+    public void transfer(Box<? super T> box) {
+        box.arrayList.addAll(this.arrayList);
+        box.currentWeight = this.currentWeight;
+        clear();
+
     }
 }

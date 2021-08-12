@@ -18,8 +18,18 @@ public class HomeWorkApp {
         boxOrange.addFruit(orange);
         boxOrange.addFruit(orange);
         boxOrange.addFruit(orange);
+        System.out.println("Вес коробки с яблоками: " + boxApple.getWeight(apl));
+        System.out.println("Вес коробки с апельсинами: " + boxOrange.getWeight(orange));
+        System.out.println("Результат сравнения коробок: " + boxApple.compare(boxOrange));
+        Box<Orange> boxOrange2 = new Box<Orange>();
+        System.out.println("Вес коробок до изменений: ");
+        System.out.println("1: " + boxOrange.getWeight(orange));
+        System.out.println("2: " + boxOrange2.getWeight(orange));
+        boxOrange.transfer(boxOrange2);
+        System.out.println("Вес коробок после изменений: ");
+        System.out.println("1: " + boxOrange.getWeight(orange));
+        System.out.println("2: " + boxOrange2.getWeight(orange));
 
-        boxApple.compare(boxOrange);
 
     }
 
@@ -27,6 +37,7 @@ public class HomeWorkApp {
         for (int i = 0; i < array.length; i++) {
             System.out.println("[" + i + "]: " + array[i]);
         }
+        System.out.println(" ");
     }
 
     public static String[] swapElements(String[] array) {
