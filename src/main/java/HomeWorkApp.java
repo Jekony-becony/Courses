@@ -1,38 +1,93 @@
+class CustomException extends Exception {
+    CustomException(String message) {
+        super(message);
+    }
+}
+
+class MyArrayDataException extends CustomException {
+    MyArrayDataException(int row, int col) {
+        super(String.format("Invalid data is in the cell [%d, %d]\n", row, col));
+    }
+}
+
+class MyArraySizeException extends CustomException {
+    MyArraySizeException() {
+        super("Massive need to be [4 x 4]\n");
+    }
+}
+
 public class HomeWorkApp {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-        printThreeWords();
-        checkSumSign();
-        printColor();
-        compareNumbers();
-    }
-    public static void printThreeWords(){
-        System.out.println("Orange!");
-        System.out.println("Banana");
-        System.out.println("Apple");
-    }
-    public static void checkSumSign(){
-        int a = 1,b = 2;
-        String s = ((a + b) >= 0) ? "Сумма положительная" : "Сумма отрицательная";
-        System.out.println(s);
-    }
-    public static void printColor(){
-        int value =0;
-        if (value<=0)
-        {
-            System.out.println("Красный");
+    public static void main(String[] args) {
+        String[][] correctMatrix = {
+                {"4", "2", "9", "1"},
+                {"1", "6", "0", "4"},
+                {"2", "1", "6", "2"},
+                {"1", "8", "7", "3"}
+        };
+        String[][] wrongSizeMatrix = {
+                {"5", "2", "5", "3"},
+                {"6", "6", "4", "5"},
+                {"3", "9", "7", "4"},
+                {"1", "2"}
+        };
+        String[][] wrongCharMatrix = {
+                {"7", "9", "2", "3"},
+                {"6", "5", "8", "9"},
+                {"5", "X", "5", "6"},
+                {"3", "9", "7", "5"}
+        };
+        System.out.println("Matrix №1: ");
+        showArray(correctMatrix);
+        System.out.println("Matrix №2: ");
+        showArray(wrongSizeMatrix);
+        System.out.println("Matrix №3: ");
+        showArray(wrongCharMatrix);
+        try {
+            System.out.println("Variant 1:");
+            System.out.println("Sum: " + Converter.strConverter(correctMatrix) + ".\n");
+        } catch (CustomException e) {
+            System.out.println(e.getMessage());
         }
-        else if (0<value  && value<=100)
-        {
-            System.out.println("Желтый");
+        try {
+            System.out.println("Variant 2:");
+            System.out.println("Sum: " + Converter.strConverter(wrongSizeMatrix) + ".\n");
+        } catch (CustomException e) {
+            System.out.println(e.getMessage());
         }
-        else { System.out.println("Зеленый"); }
+        try {
+            System.out.println("Variant 3:");
+            System.out.println("Sum: " + Converter.strConverter(wrongCharMatrix) + ".\n");
+        } catch (CustomException e) {
+            System.out.println(e.getMessage());
+        }
     }
-    public static void compareNumbers(){
-        int a = 5,b = 10;
-        if (a>=b){
-            System.out.println("a >= b");
+
+    public static void showArray(String[][] array) {
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                System.out.print(array[i][j] + "\t");
+            }
+            System.out.println();
         }
-        else{System.out.println("a < b");}
+        System.out.println();
+    }
+}
+
+class Converter {
+    static int strConverter(String[][] strArray) throws MyArraySizeException, MyArrayDataException {
+        int sum = 0;
+        if (strArray.length != 4) throw new MyArraySizeException();
+        for (int i = 0; i < strArray.length; i++) {
+            if (4 != strArray[i].length) throw new MyArraySizeException();
+            for (int k = 0; k < strArray[i].length; k++) {
+                try {
+                    sum += Integer.parseInt(strArray[i][k]);
+                } catch (NumberFormatException e) {
+                    throw new MyArrayDataException(i, k);
+                }
+            }
+        }
+
+        return sum;
     }
 }
