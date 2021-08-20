@@ -1,5 +1,5 @@
 public class AppData {
-    private String[]gi;
+    private String[]header;
     private int[][]data;
     public AppData(){
     }
