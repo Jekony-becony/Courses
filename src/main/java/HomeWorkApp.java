@@ -1,38 +1,24 @@
+import java.io.IOException;
+import java.util.*;
+
 public class HomeWorkApp {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-        printThreeWords();
-        checkSumSign();
-        printColor();
-        compareNumbers();
-    }
-    public static void printThreeWords(){
-        System.out.println("Orange!");
-        System.out.println("Banana");
-        System.out.println("Apple");
-    }
-    public static void checkSumSign(){
-        int a = 1,b = 2;
-        String s = ((a + b) >= 0) ? "Сумма положительная" : "Сумма отрицательная";
-        System.out.println(s);
-    }
-    public static void printColor(){
-        int value =0;
-        if (value<=0)
-        {
-            System.out.println("Красный");
+    public static void main(String[] args) {
+        List<String> words = Arrays.asList(
+                "Mercedes", "BMW", "BMW", "Audi", "Audi", "Audi", "Vokswagen",
+                "Vokswagen", "Subaru", "Subaru", "Subaru", "Subaru",
+                "Subaru", "Toyota", "Toyota", "Toyota", "Toyota", "Toyota", "Range Rover", "Opel"
+        );
+
+        Set<String> unique = new HashSet<String>(words);
+
+        System.out.println("Первоначальный массив");
+        System.out.println(words.toString());
+        System.out.println("Уникальные слова");
+        System.out.println(unique.toString());
+        System.out.println("Частота встречаемости слов");
+        for (String key : unique) {
+            System.out.println(key + ": " + Collections.frequency(words, key));
         }
-        else if (0<value  && value<=100)
-        {
-            System.out.println("Желтый");
-        }
-        else { System.out.println("Зеленый"); }
-    }
-    public static void compareNumbers(){
-        int a = 5,b = 10;
-        if (a>=b){
-            System.out.println("a >= b");
-        }
-        else{System.out.println("a < b");}
     }
 }
+
