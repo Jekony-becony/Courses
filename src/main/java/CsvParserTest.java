@@ -51,7 +51,7 @@ public class CsvParserTest {
         return intArray;
     }
 
-    // что бы проверить работоспособность метода надо изменить k в 49 строчке на условный 0 и сравнить вывод с csv файлом
+    // in order to check the efficiency of the method, you need to change k in line 49 to a conditional 1 and compare the output with the csv file
     public static void save(AppData data) throws IOException {
         System.out.println(" ");
         String[] stringsArray = data.getHeader();
