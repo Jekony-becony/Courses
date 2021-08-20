@@ -11,14 +11,32 @@ public class HomeWorkApp {
 
         Set<String> unique = new HashSet<String>(words);
 
-        System.out.println("Первоначальный массив");
+        System.out.println("Initial array");
         System.out.println(words.toString());
-        System.out.println("Уникальные слова");
+        System.out.println("Unique words");
         System.out.println(unique.toString());
-        System.out.println("Частота встречаемости слов");
+        System.out.println("Frequency of occurrence of words(Частота встречаемости слов):)");
         for (String key : unique) {
             System.out.println(key + ": " + Collections.frequency(words, key));
         }
+        System.out.println("Creating phonebook...");
+        Phonebook phonebook = new Phonebook();
+        System.out.println("-----------------");
+        phonebook.add( 223344,"Ivanov");
+        phonebook.add(22334411,"Ivanov");
+        phonebook.add(22334499,"Petrov");
+        phonebook.add(22334488,"Sidorov");
+        phonebook.add(22334422,"Ivanov");
+        System.out.println("Getting numbers...");
+        phonebook.get("Ivanov");
+        phonebook.get("Petrov");
+        phonebook.get("Sidorov");
+        System.out.println("-----------------");
+        System.out.print("No entry case:");
+        System.out.println("Abobkin");
+        phonebook.get("Abobkin");
+        System.out.println("-----------------");
+
     }
 }
 
