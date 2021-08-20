@@ -1,9 +1,13 @@
+import java.util.Arrays;
+
 public class AppData {
-    private String[]header;
-    private int[][]data;
-    public AppData(){
+    private String[] header;
+    private int[][] data;
+
+    public AppData() {
     }
-    public AppData(String[]header,int[][]data){
+
+    public AppData(String[] header, int[][] data) {
         this.data = data;
         this.header = header;
     }
@@ -22,5 +26,9 @@ public class AppData {
 
     public int[][] getData() {
         return data;
+    }
+
+    public String toString() {
+        return Arrays.toString(header) + "\n" + Arrays.toString(data[0]) + "\n" + Arrays.toString(data[1]);
     }
 }
